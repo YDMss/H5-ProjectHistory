@@ -8,7 +8,6 @@ Html-Css
 ```
 ```
 
-
 [无限锤](https://ydmss.github.io/H5-ProjectHistory/0.Html-Css/page/wuxianchui.html)
 https://ydmss.github.io/H5-ProjectHistory/0.Html-Css/page/wuxianchui.html
 ```
@@ -48,7 +47,7 @@ https://ydmss.github.io/H5-ProjectHistory/1.Javascript/LunFanTu/LunFan.html
 ```
 ```
 
-Jquery
+jQuery
 ```
 ```
 
