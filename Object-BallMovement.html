@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小球running</title>
+	<style>
+		body{
+			margin: 0px;
+			height: 500px;
+			background-color: pink;
+			
+		}
+		.stage{
+
+		}
+		.box{
+			width: 400px;
+			height: 400px;
+			border: 10px solid orange;
+			background: lightblue;
+			position: relative;
+			margin: 50px auto;
+		}
+		.box div{
+			width: 20px;
+			height: 20px;
+			/*background: orange;*/
+			position: absolute;
+			/*top: 190px;
+			left: 190px;*/
+			border-radius: 50%;
+		}
+	</style>
+</head>
+<body>
+	<div class="stage">
+		<div class="box"></div>
+	</div>
+</body>
+<!-- 
+用面向对象的方法写小球弹跳
+两个小球 运动
+键盘控制 上下左右 和 W E S D 控制两个小球的方向 
+ -->
+<script>
+	var Ball=function(x,y,background,speed){
+		this.x=x;
+		this.y=y;
+		this.background=background;
+		this.speed=speed;
+		//构造小球函数 
+		this.draw=function(){
+			this.divNode=document.createElement('div')
+			this.divNode.style.top=y+'px';
+			this.divNode.style.left=x+'px';
+			this.divNode.className='circles';
+			this.divNode.style.background = this.background || 'red';
+			document.getElementsByClassName('box')[0].appendChild(this.divNode);
+		}
+	}
+
+		Ball.prototype.moveRight=function(){
+			this.divNode.style.left=parseInt(this.divNode.style.left)+this.speed+'px'
+		};
+		Ball.prototype.moveBottom=function(){
+			this.divNode.style.top=parseInt(this.divNode.style.top)+this.speed+'px'
+		};
+		Ball.prototype.moveLeft=function(){
+			this.divNode.style.left=parseInt(this.divNode.style.left)-this.speed+'px'	 
+		};
+		Ball.prototype.moveTop=function(){
+			this.divNode.style.top=parseInt(this.divNode.style.top)-this.speed+'px'
+		};
+
+
+//键盘按下时改变小球运动
+			changeDir = function(){				
+				var circles= document.getElementsByClassName('circles');
+				//获取当前小球的位置值
+				var circlesLeft = parseInt(circles[0].style.left);
+				var circlesTop = parseInt(circles[0].style.top);
+				var circlesLeft2 = parseInt(circles[1].style.left);
+				var circlesTop2 = parseInt(circles[1].style.top);
+				if(circlesLeft <= 0){
+					direction = 'right';
+				}else if(circlesLeft >= 400-20 ){
+					direction = 'left';					
+				}else if(circlesTop <= 0){
+					direction = 'down';					
+				}else if(circlesTop >= 400-20){
+					direction = 'up';					
+				}
+				//这是第二个小球的方向判断
+				if(circlesLeft2 <= 0){
+					dir = 'Dright';
+				}else if(circlesLeft2 >= 400-20){
+					dir = 'Aleft';
+				}else if(circlesTop2 <= 0){
+					dir = 'Sdown';
+				}else if(circlesTop2 >= 400-20){
+					dir = 'Wup';
+				}
+			}
+
+	// var direction = 'right';
+		   //  // var checkCollision = function () {
+		   //      if (this.positionX <= 0) {
+		   //          direction = 'right';
+		   //      } else if (this.positionX >= 400-20) {
+		   //          direction = 'left';
+		   //      } else if (this.positionY <= 0) {
+		   //          direction = 'down';
+		   //      } else if (this.positionY >= 400-20) {
+		   //          direction = 'up';
+		   //      }
+		 //   };
+
+
+	// document.body.onkeydown = function (ev) {
+	//         switch (ev.keyCode) {
+	//             case 37:
+	//                 direction = 'left';
+	//                 break;
+	//             case 38:
+	//                 direction = 'up';
+	//                 break;
+	//             case 39:
+	//                 direction = 'right';
+	//                 break;
+	//             case 40:
+	//                 direction = 'down';
+	//                 break;
+	//             default:
+	//                 return;
+	//         }
+ //    	};
+
+	 //		定义小球的运动方向		
+			var direction = 'right';	
+			var dir = 'Aleft';
+			document.body.onkeydown = function(event){
+				console.log(event.keyCode)
+				switch (event.keyCode){
+					// W:87  A:65 S:83 D:68
+					case 65:
+						dir = 'Aleft';  
+						break;
+					case 87:
+						dir = 'Wup';
+						break;
+					case 68:
+						dir = 'Dright';
+						break;
+					case 83:
+						dir = 'Sdown';
+						break;
+
+					case 37:
+						direction = 'left';
+						break;
+					case 38:
+						direction = 'up';
+						break;
+					case 39:
+						direction = 'right';
+						break;
+					case 40:
+						direction = 'down';
+						break;	
+					default:
+						break;
+				}
+				
+			}	
+
+
+	//实例化两个小球 
+	var Ball1=new Ball(190,190,'red',5)
+		Ball1.draw();
+	var Ball2=new Ball(180,100,'blue',5)
+		Ball2.draw();		
+
+ 	// setInterval(function () {
+  //      	Ball1.moveRight();
+  //      	Ball1.moveLeft();
+  //      	Ball1.moveBottom();
+  //      	Ball1.moveTop();
+  //      	Ball2.move();
+  //       if (direction === 'right') {
+  //           Ball1.moveRight();
+  //       } else if (direction === 'left') {
+  //           Ball1.moveLeft();
+  //       } else if (direction === 'down') {
+  //           Ball1.moveBottom();
+  //       } else if (direction === 'up') {
+  //           Ball1.moveTop();
+  //       }
+  //   }, 50); 
+
+	 setInterval(function(){
+				changeDir();
+				if(direction === 'left'){
+					Ball1.moveLeft();					
+				}else if(direction === 'right'){
+					Ball1.moveRight();
+				}else if(direction === 'up'){
+					Ball1.moveTop();
+				}else if(direction === 'down'){
+					Ball1.moveBottom();
+				}
+				
+				if(dir === 'Aleft'){
+					Ball2.moveLeft();
+				}else if(dir === 'Wup'){
+					Ball2.moveTop();	
+				}else if(dir === 'Dright'){
+					Ball2.moveRight();	
+				}else if(dir === 'Sdown'){
+					Ball2.moveBottom();	
+				}						
+			},50)		
+</script>
+</html>
