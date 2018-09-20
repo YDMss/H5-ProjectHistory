@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时点名器</title>
+	<style>
+        body{
+            text-align: center;
+        }
+        *{
+            margin: 0;}
+        ul{
+            width: 600px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: auto;
+            text-align: center;
+        }
+        li{
+            list-style: none;
+            display: inline-block;
+            margin: 10px;
+            background: skyblue;
+            border-radius: 10px;
+            box-shadow: 1px 1px 1px black;
+            color: white;
+            padding: 5px;
+        }
+
+    </style>
+</head>
+<body>
+	<ul id="box"></ul>
+    <input type="button" value='开始点名'>
+    <script>
+    	 var nameArr =['q','w','e','r','t','y','u','i','o','p',
+    	                 'a','s','d']
+    	//    获得元素
+    var box = document.getElementById('box')
+    var btns = document.getElementsByTagName('input')
+
+    //       生成元素 追加进父元素中
+    for(var i =0;i<nameArr.length;i++){
+        var newLi = document.createElement('li')
+        newLi.innerHTML = nameArr[i]
+        box.appendChild(newLi)
+    }
+
+    var lis = document.getElementsByTagName('li')
+    var timeId;
+    btns[0].onclick = function () {
+ 	
+      timeId = setInterval(function () {
+    for(var i = 0;i<lis.length;i++){
+        lis[i].style.background = 'skyblue'
+     }
+
+     //        产生随机数
+    var index = parseInt(Math.random()*nameArr.length)
+        lis[index].style.background = 'red'
+    },200)
+       
+       //2s后点名结束(清除样式)
+     setTimeout(function(){
+ 		clearInterval(timeId)
+ 	},2000)
+    }
+</script>
+</body>
+</html>
