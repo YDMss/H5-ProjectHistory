@@ -75,4 +75,11 @@ Bootstrap
 [导航条](https://ydmss.github.io/H5-ProjectHistory/3.Bootstrap/navigation-bar.html)https://ydmss.github.io/H5-ProjectHistory/3.Bootstrap/navigation-bar.html
 ```
 ```
-
+ajax
+```
+```
+[仿淘宝搜索](https://ydmss.github.io/H5-ProjectHistory/4.ajax/taobao.html)
+https://ydmss.github.io/H5-ProjectHistory/4.ajax/taobao.html
+```
+```
+[仿百度搜索](https://ydmss.github.io/H5-ProjectHistory/4.ajax/baidu.html)https://ydmss.github.io/H5-ProjectHistory/4.ajax/baidu.html
