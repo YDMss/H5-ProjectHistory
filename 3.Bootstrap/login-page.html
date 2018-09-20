@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录验证</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+	<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.css"/>
+<style>
+		*{
+    		margin: 0px;
+    		padding: 0px;
+
+    	}
+    	.container{
+    		width: 450px;
+    		height: 300px;
+    		margin: 100px auto;
+    		border: 3px solid #337ab7;
+    		background-color:#2e6da4; 
+    		box-shadow: 0px 0px 25px #22f;
+    		border-radius:10px;
+    	}
+
+		.group-group {
+				margin-left: 90px;
+		}
+
+		label.error{
+			color:red;
+		}
+
+		@media screen and (max-width:690px){
+			label{
+				display: none;
+				}
+			}
+	</style>
+</head>
+<body>
+	<div class="container">		
+			<form class="form-horizontal " id="loginForm">
+				<div class="form-group ">
+					<h4 class="text-center" style="color: #FFF">登录管理后台</h4>
+				</div>
+				<div class="form-group has-feedbac">
+					<label  class="control-label col-sm-3">用户:</label>
+					<div class="col-sm-9">
+						<div class="input-group">
+							<span class="input-group-addon" >
+								<span class=" glyphicon glyphicon-user"></span>
+							</span>
+							<input type="text" class="form-control " data-toggle="tooltip" data-placement="top" title="请输入用户名" name="username"  />
+						</div>
+					</div>
+				</div>
+				<div class="form-group has-feedbac">
+					<label  class="control-label col-sm-3">密码:</label>
+					<div class="col-sm-9">
+						<div class="input-group">
+							<span class="input-group-addon" >
+								<span class=" glyphicon glyphicon-lock"></span>
+							</span>
+							<input type="password" class="form-control " data-toggle="tooltip" data-placement="top" title="请输入密码" name="password"  />
+						</div>
+					</div>
+				</div>
+				<div class="form-group has-feedback">
+					<label class="control-label col-sm-3">验证码:</label>
+					<div class="col-sm-4 col-xs-6" >
+						<input type="text" class="form-control"  data-toggle="tooltip" data-placement="top" title="请输入验证码" name="captcha" />
+					</div>
+					<div class="col-sm-4 col-xs-6">
+						<div type="text" class="form-control glyphicon glyphicon-picture" /></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-xs-offset-3 col-xs-4">
+					<button type="submit" data-loading-text="正在登录" class="btn btn-primary col-xs-6">登录</button>
+					</div>
+					<div class=" col-xs-4">
+					<button type="reset" class="btn btn-warning col-xs-6">重置</button>
+					</div>
+				</div>
+			</form>
+			<div class="modal fade" role="dialog">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+					<div class="modal-header">登录提示</div>
+					<div class="modal-body">登录成功</div>
+					<div class="modal-footer">
+
+						</div>
+			    </div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+		<script type="text/javascript" src="lib/js/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="lib/js/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="lib/js/bootstrap.js"></script>
+		<!-- <script type="text/javascript" src="lib/net.js"></script> -->
+
+		<script>
+			$(function () {
+	  			$('[data-toggle="tooltip"]').tooltip()
+			});
+			$(function(){
+				$('form').validate({
+					rules:{
+						username:{
+							required:true,
+							rangelength:[3,20]
+						},
+						password:{
+							required:true,
+							rangelength:[5,20]
+						},
+						captcha:{
+							required:true
+						},
+					},
+					messages:{
+						username:{
+							required:'用户名不能为空',
+							rangelength:'用户名长度为3-20位'
+						},
+						password:{
+							required:"密码不能为空",
+							rangelength:"密码长度为5-20位",
+						},
+						captcha:{
+							required:"验证码不能为空"
+						}
+					},
+					//验证通过执行方法
+					unhighlight:function(element,errorClass,validateClass){
+						$(element).tooltip('destroy');
+					},
+					//验证未通过执行方法
+					errorPlacement:function(error,element){
+						if($(element).next('.tooltip').length>0){
+							$(element).attr('data-original-title',error.text()).tooltip('show');
+						}else{
+							$(element).attr('title',error.text()).tooltip();
+						}
+					},
+					//验证所有验证通过准备提交数据
+					submitHandler:function(){
+						$('[type="submit"]').button('loading');
+						$.post('http://192.168.15.2/gz0820web/login',$('#loginForm').serializeArray(),function(data){
+							console.log(data)
+								if(data.status!=1){
+									$('[type="submit"]').button('reset');
+								}else{
+									setInterval(function(){
+										location.href="07.html";
+								},2000);
+						}
+							$('.modal-body').text(data.msg);
+							
+							console.log(data.msg)
+							$('.modal').modal();
+						},'json');
+						return false;
+					}
+				});
+
+			});
+		</script>
+</body>
+</html>

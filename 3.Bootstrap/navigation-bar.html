@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录后台</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="lib/css/net.css"/>
+	<style>
+	
+	</style>
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topMenu">
+				<i class="icon-bar"></i>
+				<i class="icon-bar"></i>
+				<i class="icon-bar"></i>
+			</button>
+			<a href="#" class="navbar-brand">LOGO</a>
+		</div>
+		<div class="collapse navbar-collapse" id="topMenu">
+			<ul class="nav navbar-nav">
+				<li><a href="#">用户中心</a></li>
+				<li><a href="#">产品中心</a></li>
+				<li><a href="#">新闻中心</a></li>
+				<li><a href="#">权限管理</a></li>
+				<li><a href="#">分类管理</a></li>
+			</ul>
+			<form class="navbar-form navbar-left hidden-sm hidden-xs hidden-md">
+				<div class="input-group">
+					<input type="text" class="form-control"/>
+					<span class="input-group-addon">搜索</span>
+				</div>
+			</form>
+			<!-- <button class="btn btn-primary navbar-btn navbar-left hidden-sm hidden-xs hidden-md">这是一个按钮</button> -->
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown"><a href="#" data-toggle="dropdown">管理操作<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="">个人信息</a></li>
+						<li><a href="">站内信息<span class="badge label label-success">3</span></a></li>
+						<li class="divider"></li>
+						<li><a href="">退出登录</a></li>
+					</ul>
+				</li>
+			</ul>
+			<p class="navbar-text navbar-right">欢迎<a href="" class="navbar-link">xx</a>登录</p>
+		</div>
+		</div>
+	</div><!--end navbar  header end-->
+
+	<div class="container-fluid main" >
+		<div class="row">
+			<!-- A11 -->
+			<div class="col-md-3 navbar-inverse leftbar">
+				<ul class="nav navbar">
+					<li>
+						<a href="#manageuser" data-toggle="collapse"  data-parent="#LOGO"><span class=" glyphicon glyphicon-user" ></span>用户管理<span class="caret"></span></a>
+						<div class="list-group collapse" id="manageuser">
+							<a href="#adduser" class="list-group-item" data-toggle="tab">添加用户</a>
+							<a href="#listuser" class="list-group-item" data-toggle="tab">用户列表</a>
+							<a href="#users" class="list-group-item"  data-toggle="tab">用户信息</a>
+						</div>
+					</li>
+					<li><a href="#managelevel" data-toggle="collapse" data-parent="#LOGO"><span class="glyphicon glyphicon-wrench" ></span>权限管理<span class="caret"></span></a>
+						<div class="list-group collapse" id="managelevel">
+							<a href="#adduser4" class="list-group-item" data-toggle="tab">权限管理1</a>
+							<a href="#listuser4" class="list-group-item" data-toggle="tab">权限管理2</a>
+							<a href="#" class="list-group-item">权限管理3</a>
+						</div>
+					</li>
+					<li><a href="#manageinfo" data-toggle="collapse" data-parent="#LOGO"><span class=" glyphicon glyphicon-heart-empty"></span>个人信息<span class="caret"></span></a>
+						<div class="list-group collapse" id="manageinfo">
+							<a href="#adduser5" class="list-group-item" data-toggle="tab">个人信息1</a>
+							<a href="#listuser5" class="list-group-item" data-toggle="tab">个人信息2</a>
+							<a href="#" class="list-group-item">个人信息3</a>
+						</div>
+					</li>
+				</ul>
+			</div><!--end leftbar-->
+
+			<!-- A222 -->
+			<div class="col-md-9 tab-content">
+			<!-- 555 -->
+			<div class="container tab-pane" id="adduser">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<!-- <a href=" data-toggle="collapse" data-parent="#laodie"adduser">添加用户</a> -->
+					<h4>添加用户</h4>
+				</div>
+				<div class="panel-body">
+					<form class="form-group">
+						<div class="form-group">
+							<label class="control-label col-sm-3">账号</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3">密码:</label>
+							<div class="col-sm-7">
+								<input type="password" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3">账号</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+					</form>
+				</div>
+			<div class="panel-footer">
+				<button class="btn btn-primary">确认添加</button>
+				<button class="btn btn-warning">清空数据</button>
+			</div>
+			</div>
+			</div>
+			<!-- 555 -->
+					<!-- A1 end -->
+			
+				<!-- 444 -->
+				<div class="container tab-pane" id="listuser">
+					<div class="panel panel-warning">
+						<div class="panel-heading">
+							<h4>用户列表</h4>
+						</div>
+						<div class="panel-body">
+							<form class="form-inline">
+								<div class="form-group">
+									<label class="control-label">筛选</label>
+									<select  class="form-control">
+										<option>xx1xx</option>
+										<option>xx2xx</option>
+										<option>xx3xx</option>
+										<option>xx4xx</option>
+										<option>xx5xx</option>
+									</select>
+								</div>
+								<div class="input-group">
+									<input type="text" class="form-control"/>
+									<span class="input-group-addon">搜索</span>
+								</div>
+							</form>
+						</div>
+						<!-- 表单 -->
+						<table class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th>第1列</th>
+								<th>第2列</th>
+								<th>第3列</th>
+								<th>第4列</th>
+								<th>第5列</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>内容1</td>
+								<td>内容1</td>
+								<td>内容1</td>
+								<td>内容1</td>
+								<td>内容1</td>
+							</tr>
+							<tr>
+								<td>内容2</td>
+								<td>内容2</td>
+								<td>内容2</td>
+								<td>内容2</td>
+								<td>内容2</td>
+							</tr>
+							<tr>
+								<td>内容3</td>
+								<td>内容3</td>
+								<td>内容3</td>
+								<td>内容3</td>
+								<td>内容3</td>
+							</tr>
+							<tr>
+								<td>内容4</td>
+								<td>内容4</td>
+								<td>内容4</td>
+								<td>内容4</td>
+								<td>内容4</td>
+							</tr>
+							<tr>
+								<td>内容5</td>
+								<td>内容5</td>
+								<td>内容5</td>
+								<td>内容5</td>
+								<td>内容5</td>								
+							</tr>
+						</tbody>
+					</table>		
+					<!-- 分页 -->
+					<div  class="panel-footer">
+						<ul class="pagination">
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+						</ul>
+					</div>	
+				</div>
+			</div><!-- 444 -->
+
+ 			<div class="container tab-pane" id="users">
+					<div class="panel panel-warning">
+						<div class="panel-heading">
+							<h4>用户信息</h4>
+						</div>
+						<table class="table table-bordered table-hover">
+							<head>
+								<tr>
+									<th>id</th>
+									<th>username</th>
+									<th>password</th>
+									<th>age</th>
+									<th>gender</th>
+								</tr>
+							</head>
+							<tbody>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									
+
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+							
+						</table>
+					</div>
+					
+					<div  class="panel-footer">
+						<ul class="pagination">
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#">6</a></li>
+							<li><a href="#">7</a></li>
+							<li><a href="#">8</a></li>
+						</ul>
+					</div>	
+
+					<script>
+						function getUser($page){
+							$.get('http://192.168.15.2/gz0820web/users',{page:$page},function(data){
+								var users=data.data;
+								console.log(users)
+								if(users.length>0) $('tbody').empty();
+								for(var i in users){
+									var tr=$('<tr/>').appendTo('tbody');
+									$('<td/>').html(users[i].id).appendTo(tr);
+									$('<td/>').html(users[i].username).appendTo(tr);
+									$('<td/>').html(users[i].gender).appendTo(tr);
+									$('<td/>').html(users	[i].age).appendTo(tr);
+								}
+								if(users.length>0) $('.pagination').empty();
+								var pageing='';
+								for(var i=1;i<=data.last_page;i++){
+									if( i == data.current_page){
+										pageing+='<li class="active"><a href="javascript:void(0)">'+i+'</a></li>';
+										continue;
+									}
+									pageing+='<li><a href="javascript:getUser('+i+')">'+i+'</a></li>';
+
+								}
+								$('.pagination').html(pageing);
+							},'json');
+						}
+						$(function(){
+							getUser(1);
+						});
+					</script>
+
+				</div> 
+
+
+			</div>  <!-- A222 -->
+
+		
+
+
+
+		</div>
+	</div>	<!-- A2 end -->
+
+	</div>
+	</div>
+
+
+			<!--尾部的导航-->
+	<div class="navbar navbar-default navbar-fixed-bottom">
+		<ul class="breadcrumb">
+			<li><a href="">首页</a></li>
+			<li><a href="">产品中心</a></li>
+			<li><a href="">产品列表</a></li>
+			<li class="active">查看产品</li>
+		</ul>
+	</div>
+
+
+	<script type="text/javascript" src="lib/js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="lib/js/bootstrap.js"></script>
+</body>
+</html>
