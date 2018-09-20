@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>淘宝</title>
+	<script type="text/javascript" src="jquery-3.3.1.js"></script>
+	<style>	
+	 		 #wrap{
+                width: 612px;
+                margin: 50px 300px;
+                position: relative;
+                
+            }
+   			 input{
+                width: 460px;
+                height: 42px;
+                border: 2px solid #f50;
+                float: left;
+                outline: none;
+                border-radius: 25px 0 0 25px;
+                font-size: 18px;
+                padding: 0 20px;
+                
+            }
+            #btn{
+                float: left;
+                height: 46px;
+                width: 100px;
+                background: #f50;
+                color: white;
+                border: none;
+                text-align: center;
+                border-radius:0 25px 25px 0;
+                cursor: pointer;
+                outline: none;
+                font-size: 20px;
+            }
+            #wrap ul li.active{
+            	background-color:#ccc;
+            	/*color: #fff;*/
+            }
+	</style>
+</head>
+<body>
+	<div id='wrap'>
+		<div style="overflow: hidden;">
+		<input type="text" id="inp"> 
+		<input type="button" name="btn" id="btn" value="搜  索" />
+	</div>
+	<ul id="dropbox"></ul>
+	
+	</div>
+	<script>
+		function sayHi(date){
+
+			// console.log('这是我自己定义sayHi回调函数');
+			// console.log('这是淘宝数据',data);
+		}
+
+
+		$(function(){
+			$('input').keyup(function(event){
+				if(event.keyCode==38||event.keyCode==40||event.keyCode==13) return;
+				var value=$(this).val();  // 获取输入的值
+				//console.log(value)
+				$.ajax({
+					url:"https://suggest.taobao.com/sug?callback=sayHi",
+					data:{q:value},
+					type:"get",
+					dataType:"jsonp",
+					success:function(da){
+						//console.log(da)
+					 var dropboxel=$('#dropbox');
+
+						$('ul').html('');
+						for(var i in da.result){
+							//console.log(da.result)
+							//$('<li/>').html(da.result[i][0]).appendTo('ul');
+							$('<li/>').text(da.result[i][0]).appendTo(dropboxel);
+						}
+						dropboxel.show()
+						//li
+						$("ul").css("list-style","none")
+						$("li").mouseenter(function(){
+							$(this).css('background',"#ddd");
+						}).click(function(){   //获取对应点击的内容
+							
+						var inputs=$(this).html();   //获取'li'里面的内容到'ul'
+						$('#inp').val($(this).html())
+						$('ul').html('');
+
+						location.href="https://s.taobao.com/search?q="+inputs;
+						});
+
+						$("li").mouseleave(function(){
+							$(this).css("background","none")
+							});
+						//点击搜索 
+						 $('#btn').click(function(){
+						 	var inputs=$('#inp').val();
+          				location.href="https://s.taobao.com/search?q="+inputs;
+
+           				 });
+
+           				 // //或者 enter 跳转
+           					//  var inputs=$('#inp').val();
+           				 //     var s=event.keyCode;
+           				 // 	 if(s==13){
+           				 // 	 location.href="https://s.taobao.com/search?q="+inputs;
+           					//  }else if(s==40){
+
+           					//  }
+					},
+					error:function(xhr,error,ex){
+						//调试查看错误
+						// console.log('xhr==>',xhr);
+						// console.log('error==>',error);
+						// console.log('ex==>',ex);
+
+						alert('服务器错误，请稍后再试！')
+
+					}
+
+				});
+			}).keyup(function(event){
+				var active=$('#dropbox li.active');
+				//console.log(active);
+				var s=event.keyCode;
+				//console.log(s);
+				if(s==13){
+					//location.href="https://s.taobao.com/search?q="+inputs;
+					location.href="https://s.taobao.com/search?q="+$('[type="text"]').val();
+				}
+           		else if(s==40){
+				if(active.length==0||active.next().length==0){
+					$('#dropbox li').first().addClass('active').siblings().removeClass('active');
+				}else{
+					$(active).next().addClass('active').siblings().removeClass('active');
+				}
+				$('[type="text"]').val($('li.active').text());
+			}else if(s==38){
+				//上键
+				if(active.prev().length==0||active.length==0){
+					$('#dropbox li').last().addClass('active').siblings().removeClass('active');
+				}else{
+					$(active).prev().addClass('active').siblings().removeClass('active');
+				}
+				$('[type="text"]').val($('li.active').text());
+			}
+			});
+
+			
+		});
+
+	</script>
+</body>
+</html>
