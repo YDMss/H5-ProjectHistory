@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p><span>距2019年除夕还有:</span>
+<span id="date"></span><span class="white14b">天</span>
+<span id="time"></span></p>
+<script>
+var now = new Date();
+function GetServerTime()
+{
+var urodz = new Date("2/3/2019 23:59:59");
+now.setTime(now.getTime()+250);
+days = (urodz - now) / 1000 / 60 / 60 / 24;
+daysRound = Math.floor(days);
+hours = (urodz - now) / 1000 / 60 / 60 - (24 * daysRound);
+hoursRound = Math.floor(hours);
+minutes = (urodz - now) / 1000 /60 - (24 * 60 * daysRound) - (60 * hoursRound);
+minutesRound = Math.floor(minutes);
+seconds = (urodz - now) / 1000 - (24 * 60 * 60 * daysRound) - (60 * 60 * hoursRound) - (60 * minutesRound);
+secondsRound = Math.round(seconds)
+document.getElementById("date").innerHTML = daysRound;
+document.getElementById("time").innerHTML = hoursRound + "小时" + minutesRound + "分" + secondsRound+"秒";
+}
+setInterval("GetServerTime()",250);
+</script>
+
+</body>
+</html>

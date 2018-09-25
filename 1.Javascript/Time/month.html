@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--1.从页面上获取会员的三位数会员卡号（数字），如果三位数相加的和大于20 则弹出是超级会员 否则是普通会员-->
+
+<!--2.输入一个数（数字）判断这个数是小数还是整数-->
+
+<!--3.输入年份和月份 求该月有多少天-->
+<!--是否是闰年-->
+<!--普通年能被4整除且不能被100整除的为闰年。（如2004年就是闰年,1900年不是闰年）；-->
+<!--世纪年能被400整除的是闰年。(如2000年是闰年，1900年不是闰年)；-->
+
+<!--1、3、5 7 8 10 12   31天-->
+<!--4 6 9 11           30天-->
+<!--闰年 29天-->
+<!--平年28天-->
+请输入年份和月份：<br>
+<input type='number' id='t1'>年
+<input type='number' id='t2'>月
+<input type='button' id='b1' value='确认'>
+<script>
+
+    var t1 = document.getElementById('t1')
+    var t2 = document.getElementById('t2')
+    var b1 = document.getElementById('b1')
+
+    b1.onclick = function () {
+//        获得输入框的值
+        var a1 = Number(t1.value)
+        var a2 = Number(t2.value)
+        console.log(a1)
+        console.log(a2)
+//
+        switch (a2){
+            case 2:
+                if(a1 % 4 ==0 && a1 % 100 !=0 || a1%400==0){
+                    alert('29天')
+                }else {
+                    alert('28天')
+                }
+                break;
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                alert('31天');
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                alert('30天');
+                break;
+            default:
+                alert('你说啥')
+        }
+
+
+    }
+
+
+//        if(a2 == 2)
+//        {
+//            if(a1%4==0 && a1%100!=0 || a1%400==0)
+//            {
+//                alert('29')
+//            }
+//            else
+//                alert('28')
+//        }
+//        else if(a2==1||a2==3||a2==5||a2==7||a2==8||a2==10||a2==12)
+//            alert('31')
+//        else if(a2==2||a2==4||a2==6||a2==9||a2==11)
+//            alert('30')
+//        else
+//            alert('输入错误')
+//    }
+
+//    var vip = prompt('请输入三位数会员卡号')
+//    var bai = parseInt(vip/100)
+//    var shi = parseInt(vip%100/10)
+//    var ge = parseInt(vip%10)
+//
+//    console.log(bai,shi,ge)
+//    console.log(typeof bai)
+//
+////    sum = +ge + +shi + +bai
+//    sum = ge + shi + bai
+//    if(sum > 20){
+//        alert('超级会员')}
+//    else{
+//        alert('普通会员')
+//    }
+//    var nub = prompt('请输入一个数 ')
+//    if(nub == parseInt(nub)){
+//        alert('整数')
+//    }else{
+//        alert('小数')
+//    }
+//    alert(prompt('1'))
+    alert(parseInt('u67i'))
+
+</script>
+</body>
+</html>

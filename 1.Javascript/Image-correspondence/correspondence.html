@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #header img{
+            width: 100px;
+            height: 100px;
+        }
+        #main img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<!--
+
+-->
+<body>
+<div id="header">
+    <img src="images/1.jpg" alt="" onclick='f1(this)'>
+    <img src="images/2.jpg" alt="" onclick='f1(this)'>
+    <img src="images/3.jpg" alt="" onclick='f1(this)'>
+    <img src="images/4.jpg" alt="">
+</div>
+<div id="main">
+    <img src="images/1.jpg" alt="" onclick='alert(123);alert(345)'>
+</div>
+<script>
+    var header= document.getElementById('header')
+    var main = document.getElementById('main')
+    var headerImgs = header.getElementsByTagName('img')
+    var mainImg = main.getElementsByTagName('img')[0]
+//    console.log(headerImgs)
+//    console.log(mainImg)
+
+//    headerImgs[0].onclick = function () {
+////        mainImg.src = headerImgs[0].src
+//        f1(headerImgs[0])
+//    }
+//    headerImgs[1].onclick = function () {
+////        mainImg.src = headerImgs[1].src
+//        f1(headerImgs[1])
+//
+//    }
+//    headerImgs[2].onclick = function () {
+////        mainImg.src = headerImgs[2].src
+//        f1(headerImgs[2])
+//
+//    }
+    headerImgs[3].onclick = function () {
+//        mainImg.src = this.src
+        f1(this)
+
+    }
+
+    function f1 (ele) {
+        mainImg.src = ele.src
+    }
+</script>
+</body>
+</html>

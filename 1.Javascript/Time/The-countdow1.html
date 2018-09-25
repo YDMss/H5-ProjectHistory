@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 400px;
+            height: 80px;
+            background: #ccc;
+            margin: auto;
+            text-align: center;
+            line-height: 80px;
+        }
+        span{
+            padding: 5px;
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span>0</span>
+    <span>2</span>
+    <b>:</b>
+    <span>0</span>
+    <span>0</span>
+    <b>:</b>
+    <span>0</span>
+    <span>0</span>
+
+</div>
+<script>
+//    总秒数
+    var all = 2 * 60 * 60;
+    var box = document.getElementsByTagName('div')[0]
+    var spans = document.getElementsByTagName('span')
+    var timeId = setInterval(function () {
+        all--
+//        获得时分秒
+        var hours = all/3600
+        var minutes = all % 3600 / 60
+        var seconds = all % 60
+
+//           0小时 1分钟 0秒钟
+//           1小时 0分钟 0秒钟
+//        3698 1小时 1分钟 38秒
+
+//        获得时分秒的个位和十位
+        var sp0 = parseInt(hours / 10)
+        var sp1 = parseInt(hours % 10)
+        var sp2 = parseInt(minutes / 10)
+        var sp3 = parseInt(minutes % 10)
+        var sp4 = parseInt(seconds / 10)
+        var sp5 = parseInt(seconds % 10)
+
+        spans[0].innerHTML = sp0
+        spans[1].innerHTML = sp1
+        spans[2].innerHTML = sp2
+        spans[3].innerHTML = sp3
+        spans[4].innerHTML = sp4
+        spans[5].innerHTML = sp5
+
+        if(all == 0){
+            clearInterval(timeId)
+        }
+
+    },1000)
+
+
+
+
+</script>
+</body>
+</html>
