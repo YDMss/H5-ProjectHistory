@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>进度条</title>
+</head>
+<body>
+    <svg viewBox="0 0 100 100" width="500" height="500">
+        
+        <line x1="0" y1="0" x2="100" y2="0" stroke="black" stroke-width="5"/>
+        <!-- stroke-dasharray="10"  虚线 断点（10实 5虚） -->
+        <line x1="0" y1="10" x2="100" y2="10" stroke="black" stroke-width="5" stroke-dasharray="10"/>
+        <line x1="0" y1="20" x2="100" y2="20" stroke="black" stroke-width="5" stroke-dasharray="10 5"/>
+
+        <!-- stroke-dashoffset="12" 移动 左加右减 -->
+        <line x1="0" y1="30" x2="100" y2="30" stroke="black" stroke-width="5" stroke-dasharray="100" stroke-dashoffset="12">
+            <animate attributeType="XML" attributeName="stroke-dashoffset" from="100" to="12" dur="3s" />
+        </line>/>
+    </svg>
+    <style>
+        line{
+            stroke: bisque;
+        }
+    </style>
+</body>
+</html>

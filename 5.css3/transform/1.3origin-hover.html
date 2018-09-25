@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>origin</title>
+	<style>
+	*, *:after, *:before {
+		  box-sizing: border-box;
+		}
+
+		body {
+		  background: #F5F3F4;
+		  margin: 0;
+		  padding: 10px;
+		  font-family: 'Open Sans', sans-serif;
+		  text-align: center;
+		}
+	.card {
+		  display: inline-block;
+		  margin: 10px;
+		  background: #fff;
+		  padding: 15px;
+		  min-width: 200px;
+		  box-shadow: 0 3px 5px #ddd;
+		  color: #555;
+		}
+		.card .box {
+		  width: 100px;
+		  height: 100px;
+		  margin: auto;
+		  background: #ddd;
+		  cursor: pointer;
+		  box-shadow: 0 0 5px #ccc inset;
+		}
+		.card .box .fill {
+		  width: 100px;
+		  height: 100px;
+		  position: relative;
+		  background: yellow;
+		  opacity: .8;
+		  box-shadow: 0 0 5px #ccc;
+		  transition: 0.3s;
+		}
+		.rotate:hover .fill {
+		  transform: rotate(45deg);
+		}
+		.rotateX:hover .fill {
+		  transform: rotateX(45deg);
+		}
+
+		.to-100-0-0 {
+          transform-origin: 100% 0 0;
+		}
+		.to-0-100-0 {
+		          transform-origin: 0 100% 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="card">
+	  <div class="box rotate">
+	    <div class="fill to-100-0-0"></div>
+	  </div>
+	  <p>transform-origin : 100% 0 0  <br/>rotate(45deg)</p>
+	</div>
+	<div class="card">
+	  <div class="box rotate">
+	    <div class="fill to-0-100-0"></div>
+	  </div>
+	  <p>transform-origin : 0 100%  0<br/>rotate(45deg)</p>
+	</div>
+	<br>
+	<div class="card perspective-200">
+	  <div class="box rotateX">
+	    <div class="fill to-0-100-0"></div>
+	  </div>
+	  <p>transform-origin : 0 100%  0<br/>rotateX(45deg)</p>
+	</div>
+	<div class="card perspective-200">
+	  <div class="box rotateX">
+	    <div class="fill to-100-0-0"></div>
+	  </div>
+	  <p>transform-origin : 100% 0 0<br/>rotateX(45deg)</p>
+	</div>
+</body>
+</html>

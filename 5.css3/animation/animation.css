@@ -1,0 +1,34 @@
+.run {
+  width: 180px;
+  height: 300px;
+  background: lightblue url(../img/sprites.png);
+  animation-name: run;
+  animation-duration: 2s;
+  animation-timing-function: steps(7, start);
+  animation-iteration-count: infinite;
+}
+@keyframes run {
+  0% {
+    background-position-x: 180px;
+  }
+  100% {
+    background-position-x: 100%;
+  }
+}
+.jump {
+  width: 76.5px;
+  height: 81px;
+  background: lightblue url(../img/sprites-IORI.jpg);
+  animation-name: jump;
+  animation-duration: 3s;
+  animation-timing-function: steps(26, start);
+  animation-iteration-count: infinite;
+}
+@keyframes jump {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 100%;
+  }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>range</title>
+	<style>
+		.box{
+		    position: relative;
+		    margin:50px;
+		    display: inline-block;
+		}
+		.box img{
+			border-radius: 50%; 
+			 width: 200px;
+			 height: 200px;"
+		}
+		.box-round{
+			border: 
+
+		}
+		.box .box-content{
+		    width: 200px;
+		    height:200px;
+		    overflow: hidden;
+		    border-radius: 50%;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    padding: 0px 0px;
+		    text-align: center;
+		    background: rgba(0,0,0,0.3);
+		    color:rgba(255,255,255,0.6);
+		    transform: rotateY(90deg);
+		    transition: all 0.50s ease-in-out 0s;
+		}
+		.box .title{
+		    font-size: 20px;
+		    color:rgba(255,255,255,0.6);
+		    text-transform: uppercase;
+		}
+		.box .box-img1{
+		    transform: rotateY(0);
+		    transition: all 0.50s ease-in-out 0s;
+		}
+		.box:hover .box-img1{
+		    transform: rotateY(0);
+		}
+		.box:hover .box-img2{
+		    transform: rotateY(-180deg);
+		    opacity: 0;
+		}
+		.box:hover .box-content{
+		    transform: rotateY(0);
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="box-round"></div>
+		<div class="box-img1">
+			<img src="img/1.jpg" >
+		</div>
+		<div class="box-content">
+			<h4 class="title">Duende</h4>
+			<p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae libero orci.</p>
+		</div>
+	</div>
+	<div class="box">
+		<div class="box-img2">
+			<img src="img/7.jpg">
+		</div>
+		<div class="box-content">
+			<h4 class="title">Duende</h4>
+			<p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae libero orci.</p>
+		</div>
+	</div>
+</body>
+</html>

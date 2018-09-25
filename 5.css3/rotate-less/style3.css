@@ -1,0 +1,91 @@
+.box {
+  perspective: 500px;
+  margin: 100px;
+}
+.chart {
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  background: url("../img/1.jpg") center;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0;
+  transform-style: preserve-3d;
+  transition: all 1s;
+}
+.chart li {
+  list-style: none;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 120px 7px;
+  position: relative;
+}
+.chart span {
+  font-size: 12px;
+  width: 0px;
+  height: 20px;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(68, 118, 158, 0.8);
+  transform-origin: 0% 50% 0;
+  transform: rotate(-45deg) rotateY(-90deg);
+  transform-style: preserve-3d;
+  transition: all 1s;
+  transition: absolute;
+}
+.chart span::before,
+.chart span::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(68, 118, 158, 0.8);
+}
+.chart span::before {
+  width: 20px;
+  height: 20px;
+  transform-origin: 0% 50% 0;
+  transform: rotateY(90deg) translateZ(0px);
+  transition: all 1s;
+}
+.chart span::after {
+  width: 100%;
+  height: 20px;
+  transform-origin: 50% 100% 0;
+  transform: rotateX(90deg);
+}
+.chart.active {
+  transform: rotateX(45deg);
+}
+.chart.active .one span {
+  width: 100px;
+}
+.chart.active .one span::before {
+  transform: rotateY(90deg) translateZ(100px);
+}
+.chart.active .two span {
+  width: 80px;
+}
+.chart.active .two span::before {
+  transform: rotateY(90deg) translateZ(80px);
+}
+.chart.active .three span {
+  width: 150px;
+}
+.chart.active .three span::before {
+  transform: rotateY(90deg) translateZ(150px);
+}
+.chart.active .four span {
+  width: 120px;
+}
+.chart.active .four span::before {
+  transform: rotateY(90deg) translateZ(120px);
+}
+.chart.active .five span {
+  width: 115px;
+}
+.chart.active .five span::before {
+  transform: rotateY(90deg) translateZ(115px);
+}

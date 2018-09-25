@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SVG</title>
+</head>
+<body>
+<!-- 
+    rect 元素的 width 和 height 属性可定义矩形的高度和宽度
+        style 属性用来定义 CSS 属性
+        CSS 的 fill 属性定义矩形的填充颜色（rgb 值、颜色名或者十六进制值）
+        CSS 的 stroke-width 属性定义矩形边框的宽度
+        CSS 的 stroke 属性定义矩形边框的颜色 
+    **新属性
+        x 属性定义矩形的左侧位置（例如，x="0" 定义矩形到浏览器窗口左侧的距离是 0px）
+        y 属性定义矩形的顶端位置（例如，y="0" 定义矩形到浏览器窗口顶端的距离是 0px）
+        CSS 的 fill-opacity 属性定义填充颜色透明度（合法的范围是：0 - 1）
+        CSS 的 stroke-opacity 属性定义轮廓颜色的透明度（合法的范围是：0 - 1）
+        CSS opacity 属性用于定义了元素的透明值 (范围: 0 到 1)。
+        rx 和 ry 属性可使矩形产生圆角。
+-->
+
+<!-- 
+        <animateTransform>	
+        动画上一个目标元素变换属性，从而使动画控制平移，缩放，旋转或倾斜	
+        by="相对偏移值"     from="起始值"   to="结束值"
+        type="类型的转换其值是随时间变化。
+                可以是 'translate', 'scale', 'rotate', 'skewX', 'skewY'"
+     -->
+<svg>
+    <rect x="0" y="0" width="4" height="7" fill="red">
+        <animateTransform attributeName="transform" 
+        type="scale"values="1,1;1,3;1,1" 
+        begin="0s" dur="0.6s" repeatCount="indefinite" />
+    </rect>
+    <rect x="10" y="0" width="4" height="7" fill="red">
+        <animateTransform attributeName="transform" 
+        type="scale" values="1,1;1,3;1,1" 
+        begin="0.2s" dur="0.6s" repeatCount="indefinite">
+    </rect>
+    <rect x="20" y="0" width="4" height="7" fill="red">
+        <animateTransform  attributeName="transform" 
+        type="scale" values="1,1; 1,3; 1,1" 
+        begin="0.4s" dur="0.6s" repeatCount="indefinite" />       
+    </rect>
+    
+</svg>
+<hr>
+<svg>
+    <rect x="10" y="10" width="4" height="5" fill="red">
+        <animateTransform attributeName="transform" 
+        type="scale" values="1,1;1,2;1,1" 
+        begin="0.1s" dur="0.6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="20" y="10" width="4" height="5" fill="red">
+        <animateTransform attributeName="transform" 
+        type="scale" values="1,1;1,2;1,1" 
+        begin="0.2s" dur="0.6s" repeatCount="indefinite"/>
+    </rect>
+     <rect x="30" y="10" width="4" height="5" fill="red">
+        <animateTransform attributeName="transform" 
+        type="scale" values="1,1;1,2;1,1" 
+        begin="0.4s" dur="0.6s" repeatCount="indefinite"/>
+        </rect>  
+</svg>
+<hr>
+<svg>
+    <rect x="0" y="13" width="4" height="5" fill="#333">
+        <animate attributeName="height" values="5;21;5" 
+        begin="0s" dur="0.6s" repeatCount="indefinite" />
+        <animate attributeName="y" values="13; 5; 13"
+        begin="0s" dur="0.6s" repeatCount="indefinite" />
+    </rect>   
+    <rect x="10" y="13" width="4" height="5" fill="#333">
+        <animate attributeName="height" values="5;21;5" 
+        begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+        <animate attributeName="y" values="13; 5; 13"
+        begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+    </rect>  
+    <rect x="20" y="13" width="4" height="5" fill="#333">
+        <animate attributeName="height" values="5;21;5" 
+        begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+        <animate attributeName="y" values="13; 5; 13"
+        begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+    </rect>  
+    <rect x="30" y="10" width="4" height="5" fill="#333" opacity="0.2">
+        <animate attributeName="opacity"  values="0.2; 1; .2" 
+        begin="0s" dur="0.6s" repeatCount="indefinite" />
+        <animate attributeName="height"  values="10; 20; 10" 
+        begin="0s" dur="0.6s" repeatCount="indefinite" />
+        <animate attributeName="y"  values="10; 5; 10" 
+        begin="0s" dur="0.6s" repeatCount="indefinite" />
+        </rect> 
+</svg>
+<hr>
+<svg>
+   <rect x="0" y="0" width="4" height="20" fill="#333">
+      <animate attributeName="opacity"values="1; .2; 1" 
+        begin="0s" dur="0.6s" repeatCount="indefinite" />
+    </rect>
+    <rect x="7" y="0" width="4" height="20" fill="#333">
+      <animate attributeName="opacity"values="1; .2; 1" 
+        begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+    </rect>
+    <rect x="14" y="0" width="4" height="20" fill="#333">
+      <animate attributeName="opacity"values="1; .2; 1" 
+        begin="0.4s" dur="0.6s" repeatCount="indefinite" />
+    </rect>
+</svg>
+<hr>
+</body>
+</html>

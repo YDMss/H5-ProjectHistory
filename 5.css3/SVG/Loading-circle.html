@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圆形进度条</title>
+</head>
+<body>
+    <svg id="svg"  viewBox="0 0 37.8 37.8" width="200" height="200">
+        <circle cx="18.91" cy="18.91" r="15.91" style="fill: none; stroke: rgba(0,0,0,0.1); stroke-width: 3;"></circle>
+        <circle cx="18.91" cy="18.91" r="15.91" style="fill: none; stroke: orange; stroke-width: 3; stroke-dasharray:100; stroke-dashoffset:0;">
+            <animate attributeType="XML" attributeName="stroke-dashoffset" from="100" to="0" dur="3s" />
+        </circle>
+    </svg>
+    <!-- stroke-dasharray:100; 100实/100空/100实/100空一直循环  stroke-dashoffset:20; （移动>>隐藏 则是 显示为（100+20=120 80实20空） -->
+    <svg id="svg1"  viewBox="0 0 37.8 37.8" width="200" height="200">
+            <circle cx="18.91" cy="18.91" r="15.91" style="fill: none; stroke: rgba(0,0,0,0.1); stroke-width: 3;"></circle>
+            <circle cx="18.91" cy="18.91" r="15.91" style="fill: none; stroke: orange; stroke-width: 3; stroke-dasharray:100; stroke-dashoffset:20;">
+                <animate attributeType="XML" attributeName="stroke-dashoffset" from="100" to="20" dur="3s" />
+            </circle>
+        </svg>
+    <style>
+        #svg {
+            
+            transform: rotate(-90deg);
+        }
+        #svg1 {
+            
+            transform: rotate(-90deg);
+        }
+    </style>
+</body>
+</html>

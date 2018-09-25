@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hover</title>
+	<style>
+		*, *:after, *:before {
+		  box-sizing: border-box;
+		}
+
+		body {
+		  background: #F5F3F4;
+		  margin: 0;
+		  padding: 10px;
+		  font-family: 'Open Sans', sans-serif;
+		  text-align: center;
+		}
+	.card {
+		  display: inline-block;
+		  margin: 10px;
+		  background: #fff;
+		  padding: 15px;
+		  min-width: 200px;
+		  box-shadow: 0 3px 5px #ddd;
+		  color: #555;
+		}
+		.card .box {
+		  width: 100px;
+		  height: 100px;
+		  margin: auto;
+		  background: #ddd;
+		  cursor: pointer;
+		  box-shadow: 0 0 5px #ccc inset;
+		}
+		.card .box .fill {
+		  width: 100px;
+		  height: 100px;
+		  position: relative;
+		  background: pink;
+		  opacity: .7;
+		  box-shadow: 0 0 5px #ccc;
+		  transition: 0.3s;
+		}
+		.rotateX:hover .fill {
+		  transform: rotateX(45deg);
+		}
+		.rotateY:hover .fill {
+		  transform: rotateY(45deg);
+		}
+		.perspective-100 .box {
+		  perspective: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="perspective-100">
+	  <div class="card">
+	    <div class="box rotateX">
+	      <div class="fill"></div>
+	    </div>
+	    <p>100 rotateX(90deg)</p>
+	  </div>
+	  <div class="card">
+	    <div class="box rotateY">
+	      <div class="fill"></div>
+	    </div>
+	    <p>100 rotateY(45deg)</p>
+	  </div>
+	</div>
+
+
+	<div class="perspective-200">
+	  <div class="card">
+	    <div class="box rotateX">
+	      <div class="fill"></div>
+	    </div>
+	    <p>200 rotateX(90deg)</p>
+	  </div>
+	  <div class="card">
+	    <div class="box rotateY">
+	      <div class="fill"></div>
+	    </div>
+	    <p>200 rotateY(45deg)</p>
+	  </div>
+	</div>
+
+</body>
+</html>

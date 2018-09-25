@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3DD</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style3.css">
+
+</head>
+<body>
+    <div class="box">
+        <div class="card">
+            <div class="photo"></div>
+            <!-- <h2>TTTTOP</h2>
+			<p>THIS WEEK</p> -->
+            <div class="chart">
+                    <li class="one"><span>200</span></li>
+                    <li class="two"><span >100</span></li>
+                    <li class="three"><span>150</span></li>
+                    <li class="four"><span>120</span></li>
+                    <li class="five"><span>225</span></li>
+            </div>
+            <!-- <h3>1225</h3> -->
+        </div>
+    </div>
+</body>
+<script>
+    $('.chart').click(function(e){
+        $(this).toggleClass('active');
+        e.preventDefault();
+    });
+</script>
+</html>
