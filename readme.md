@@ -36,7 +36,7 @@
   > https://ydmss.github.io/1.Javascript/tabSwitch/tabSwitch.html
 
 * [电子时钟](https://ydmss.github.io/1.Javascript/Time/Digital-clock.html)
- > https://ydmss.github.io/1.Javascript/Time/Digital-clock.html
+  > https://ydmss.github.io/1.Javascript/Time/Digital-clock.html
 
 * [判断该月份有几天](https://ydmss.github.io/1.Javascript/Time/month.html)
   > https://ydmss.github.io/1.Javascript/Time/month.html
