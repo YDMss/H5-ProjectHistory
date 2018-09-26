@@ -8,12 +8,14 @@
 </head>
 <body>
 	<select id="province">
-		<option></option>
+		<option>请选择</option>
 	</select>
 	<select id="city">
+		<option>请选择</option>
 		
 	</select>
 	<select id="area">
+		<option>请选择</option>
 		
 	</select>
 	<script type="text/javascript">
@@ -39,23 +41,41 @@
 					for(var n in cities){
 						cityStr+='<option>'+cities[n].name+'</option>';
 					}
-					$('#city').html(cityStr).change(function(){
-						var cityName=$(this).val();
+					// $('#city').html(cityStr).change(function(){
+						$('#city').html(cityStr);
+						var cityName=$('#city').val();
 						for(var m in cities){
 							if(cities[m].name==cityName){
 								var areas=cities[m].area;
 								var areaStr='';
-								for(var x in areas){
-									areaStr+='<option>'+areas[x]+'</option>';
+								for(var n in areas){
+									areaStr+='<option>'+areas[n]+'</option>';
 								}
 								$('#area').html(areaStr);
 							}
 						}
 
-					});	
+					// });	
 				}
 			}
 		});
+		$('#city').change(function(){
+			for(var x in citiesall){
+				var citys=city=citiesall[x].city;
+				var areaName=$(this).val();
+				for(var y in citys){
+					if(citys[y].name==areaName){
+						var areas=citys[y].area;
+						var areaStr='';
+						for(var z in areas){
+							areaStr+=' <option>'+areas[z]+'</option>';
+						}
+						$('#area').html(areaStr);
+					}
+				}
+			}
+		})
+
 
 	});
 	</script>
