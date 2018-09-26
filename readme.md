@@ -66,6 +66,8 @@
 
 * [回收站](https://ydmss.github.io/2.Jquery/recycle-bin/rubbish.html)
   > https://ydmss.github.io/2.Jquery/recycle-bin/rubbish.html
+* [cookie之换背景图](https://ydmss.github.io/2.Jquery/Cookie-img/imgConversion.html)
+  >https://ydmss.github.io/2.Jquery/Cookie-img/imgConversion.html
 
 ### 3.Bootstrap
 
