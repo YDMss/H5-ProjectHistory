@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-uiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <style type="text/css">
+    body, p, ul { 
+        margin: 0;  
+        padding: 0; 
+      }
+    ul {
+         float: right;
+         height: 100px;
+         margin-top: 0px;
+         margin-right: 20px;
+      }
+    ul li {
+      list-style-type: none;
+      float: left;
+      width: 50px;
+      height: 50px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .skin {
+      height: 50px;
+      position: fixed;
+      background: #fff;
+      border-bottom: solid 1px #ccc;
+      top: 0;left: 0;width: 100%;
+    }
+    .red {
+      background:url(img/1.jpg)no-repeat center 0px;
+      background-position: center 0;
+      background-size: cover
+      }
+
+    .black {
+      /* background: #000; */
+      background:url(img/2.jpg)no-repeat center 0px;
+      background-position: center 0;
+      background-size: cover
+      }
+
+    .blue {
+      /* background: #b9daf9; */
+      background:url(img/3.jpg)no-repeat center 0px;
+      background-position: center 0;
+      background-size: cover
+      }
+  
+    .green {
+      /* background: #b7e5bd; */
+      background:url(img/4.jpg)no-repeat center 0px;
+      background-position: center 0;
+      background-size: cover
+      }
+
+  </style>  
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var cookieClass = getCookie('class');//读取需要缓存的对象。
+      $("body").attr("class", cookieClass);//
+
+      $(".skin_list li").each(function () {
+        $(this).click(function () {
+          var className = $(this).attr("class");//保存当前选择的类名
+          $("body").attr("class", className, 30);//把选中的类名给body
+
+          //设置 cookie 值的函数   //该函数设置了 cookie 名、cookie 值、cookie过期时间。
+          function SetCookie(cname, cvalue, exdays)
+          {
+            var exp = new Date();    //new Date("December 31, 9998");
+            exp.setTime(exp.getTime() + exdays * 24 * 60 * 60 * 1000);
+            var expires = "expires="+exp.toGMTString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+            //document.cookie = cname + "=" + escape(cvalue) + ";expires=" + exp.toGMTString();
+          }
+          SetCookie("class", className, 30);
+        })
+      });
+    });
+
+    //获取 cookie 值的函数
+    function getCookie(cname)  //cookie 名的参数为 cname
+    {
+      var name = cname + "="; //创建一个文本变量用于检索指定 cookie :cname + "="。
+      var ca = document.cookie.split(';'); //使用分号来分割 document.cookie 字符串，并将分割后的字符串数组赋值给 ca
+      //循环 ca 数组 (i=0;i<ca.length;i++)，然后读取数组中的每个值，并去除前后空格 (c=ca[i].trim())。
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+    //如果找到 cookie(c.indexOf(name) == 0)，返回 cookie 的值 (c.substring(name.length,c.length)。
+    //如果没有找到 cookie, 返回 ""
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+      }
+      return null;
+    }
+  </script>
+
+</head>
+<body>
+    <div class="skin">
+        <ul class="skin_list">
+          <li style="width:130px;color:gray;">更换背景图片：</li>
+          <li class="red"></li>
+          <li class="black"></li>
+          <li class="blue"></li>
+          <li class="green"></li>
+        </ul>
+      </div>
+</body>
+</html>
