@@ -70,8 +70,8 @@
   > https://ydmss.github.io/2.Jquery/recycle-bin/rubbish.html
 * [cookie之换背景图](https://ydmss.github.io/2.Jquery/Cookie-img/imgConversion.html)
   >https://ydmss.github.io/2.Jquery/Cookie-img/imgConversion.html
-* [选中行高亮](https://ydmss.github.io/2.Jquery/table.html)
-  >https://ydmss.github.io/2.Jquery/table.html
+* [选中行高亮](https://ydmss.github.io/2.Jquery/table/table.html)
+  >https://ydmss.github.io/2.Jquery/table/table.html
 
 
 ### 3.Bootstrap
