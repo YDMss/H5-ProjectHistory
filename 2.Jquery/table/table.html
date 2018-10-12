@@ -8,6 +8,12 @@
     <title>Document</title>
 </head>
 <style>
+    tr:nth-of-type(even){
+        background-color: aquamarine;
+    }
+    tr:nth-of-type(odd){
+        background-color: pink;
+    }
 	td{
 		width: 80px;
 	}
@@ -57,7 +63,8 @@
     </style>
     <script src="js/jquery.js"></script>
     <script>
-		$
+		// $("tr:odd").css("backgroundColor",'gray');  //下标是奇数的元素
+		// $("tr:even").css("backgroundColor",'pink'); //下标是偶数的元素
 
         $("input").click(function() {
             $(this).closest("tr").toggleClass("d");
