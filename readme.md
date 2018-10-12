@@ -60,6 +60,8 @@
 
 * [jQ放大镜](https://ydmss.github.io/2.Jquery/magnifyingGlassJQ/magnifyingGlass.html)
   > https://ydmss.github.io/2.Jquery/magnifyingGlassJQ/magnifyingGlass.html
+* [放大镜](https://ydmss.github.io/2.Jquery/big/big.html)
+  > https://ydmss.github.io/2.Jquery/big/big.html
 
 * [省市联动](https://ydmss.github.io/2.Jquery/Provinces-and-cities/city.html)
   > https://ydmss.github.io/2.Jquery/Provinces-and-cities/city.html
