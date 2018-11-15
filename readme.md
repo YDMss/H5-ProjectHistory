@@ -2,7 +2,7 @@
 * [急速飞行](https://ydmss.github.io/ydmss.github.io/project/FFRace/index.html)
 > https://ydmss.github.io/ydmss.github.io/project/FFRace/index.html
 
-* [百度搜索](https://ydmss.github.io/ydmss.github.io/project/baidu.com/baidu.html)
+* [仿百度搜索](https://ydmss.github.io/ydmss.github.io/project/baidu.com/baidu.html)
 > https://ydmss.github.io/ydmss.github.io/project/baidu.com/baidu.html
 
 ### 0.Html-Css
